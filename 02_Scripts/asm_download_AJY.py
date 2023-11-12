@@ -2,7 +2,7 @@
 Contributors: Jia-Shen Tsai, Wendy Wen, Zhengqi Jiao, Miaojun Pang,
 Alexander Yoshizumi
 
-Last Updated: 2023-11-02
+Last Updated: 2023-11-12
 
 Description: When run, script pulls time-location data for passenger trains
 in the US from https://asm.transitdocs.com/ at a specified interval.
@@ -11,6 +11,8 @@ in the US from https://asm.transitdocs.com/ at a specified interval.
 
 import requests, json, time, os
 from datetime import datetime
+
+# os.makedirs("..\\01_Data\\01_Source\\ASM")
 
 def download_json_data(url):
     try:
@@ -34,14 +36,12 @@ def main():
     backend_url = "https://asm-backend.transitdocs.com/map"  # the backend URL
     total_loops = 24 * 60 * 3  # 24 hours * 60 minutes/hour * 3 (for 20 seconds intervals)
     current_loop = 0
-    data_list = []
 
     while current_loop < total_loops:
         json_data = download_json_data(backend_url)
         if json_data:
             # Process the downloaded JSON data here
             print("Downloaded JSON data:", json.dumps(json_data, indent=2))
-            data_list.append(json_data)
 
         # Retrieve current date and time. 
         date_time = datetime.now()
@@ -51,10 +51,10 @@ def main():
         date_time_clean = date_time_clean.replace(' ','_',)
         date_time_clean = date_time_clean.replace(':','_',)
         date_time_clean = date_time_clean.replace('.','_',)
-        outfile = '../01_Data/01_Source/' + date_time_clean + '.json'
+        outfile = '..\\01_Data\\01_Source\\ASM\\' + date_time_clean + '.json'
 
         # Save the data to a JSON file
-        save_to_json(data_list, outfile)
+        save_to_json(json_data, outfile)
         
         # Wait for 20 seconds before making the next request
         time.sleep(20)
