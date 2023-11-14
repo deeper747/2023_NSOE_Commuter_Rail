@@ -12,12 +12,12 @@ import requests
 import os
 import tabula
 import fitz
-
-# Define the URL pattern
+# Approach 1
+## Define the URL pattern
 #base_url = "https://www.amtrak.com/content/dam/projects/dotcom/english/public/documents/corporate/monthlyperformancereports/{}/Amtrak-Monthly-Performance-Report-{}.pdf"
 filepath = "../01_Data/01_Source/Amtrak/Monthly_Performance_Report/{}/Amtrak-Monthly-Performance-Report-{}.pdf"
 
-# Define the column names, coordinates, table area for different periods
+## Define the column names, coordinates, table area for different periods
 column_names = {"Jan2018_Apr2018": ["NEC","Operating Revenue", "Operating Expense", "Adjusted Operating Earnings", "Gross Ticket Revenue", "Ridership (in Thousands)", "Seat Miles (in Millions)", "Passenger Miles (in Millions)", "eCSI", "Average Load Factor", "OTP"],
                 "May2018_Sep2019": ["NEC", "Operating Revenue", "Operating Expense", "Adjusted Operating Earnings", "Ridership (in Thousands)", "eCSI", "Average Load Factor", "OTP"],
                 "Oct2019_Feb2020": ["NEC", "Operating Revenue", "Operating Expense", "Adjusted Operating Earnings", "Ridership (in Thousands)", "Seat Miles (in Millions)", "Passenger Miles (in Millions)", "CSI", "Average Load Factor", "OTP"],
@@ -51,7 +51,7 @@ table_area = {"Jan2018_Apr2018": [118, 40, 573, 500],
               "Jun2022": [88, 1, 760, 791],
               "Jul2022_Sep2023":[47, 14, 559, 598]}
 
-
+## Define the functions
 def get_colnames_for_month(monyr):
     if monyr in ["January-2018", "February-2018", "March-2018", "April-2018"]:
         return column_names["Jan2018_Apr2018"]
@@ -150,23 +150,6 @@ for year in range(2018, 2023):
         monyr = f"{month}-{year}"
         process_monthly_report(year, monyr)
 
-
-# # Iterate through the months
-# for year, monyr in column_coordinates.keys():
-#     # Dynamically create the file path
-#     pdf = filepath.format(year, monyr)
-#     total_pages = len(tabula.read_pdf(filepath, pages='all', silent=True))
-#     # Get coordinates for the current month
-#     coordinates = get_coordinates_for_month(monyr)
-#     tabarea = get_area_for_month(monyr)
-#     colnames = get_colnames_for_month(monyr)
-
-#     # Read PDF using tabula and specify column coordinates
-#     if coordinates:
-#         dfs = tabula.read_pdf(filepath, coordinates, guess = False, pages = total_pages, area = tabarea)
-
-
-
 # #dfs = tabula.read_pdf(base_url.format(2018, "January"), pages=-1, area = [85, 40, 570, 500])
 # dfs = tabula.read_pdf(pdf, pages = 'last', area = [118, 40, 573, 500])
 # dfs[0]
@@ -182,7 +165,32 @@ for year in range(2018, 2023):
 # tabula.convert_into(dfs2[0], "output.csv", output_format = "csv")
 # dfs2[0].to_csv('pdf.csv')
 
-# Function to remove dollar sign
+
+# Single File Inspection
+monyr = 'June-2018'
+year = "2018"
+pdf = filepath.format(year,monyr)
+
+pdf_all = fitz.open(filepath.format(year, monyr))
+total_pages = len(pdf_all)
+
+## Execute Function to download and extract data for a specific month
+coordinates = get_coordinates_for_month(monyr)
+tabarea = get_area_for_month(monyr)
+colnames = get_colnames_for_month(monyr)
+
+dfs = tabula.read_pdf(pdf, columns = coordinates, guess = False, pages = 8, area = tabarea)
+# dfs = tabula.read_pdf(pre_pdf, pages = 8, area = tabarea)
+dfs[0].columns = colnames
+dfs[0]
+dfs[0].to_csv('{}_RLR.csv'.format(monyr))
+
+# Loop through the months and years you want to process
+process_monthly_report(year, monyr)
+
+
+# Approach two: remove dollar sign (under construction)
+## Function to remove dollar sign
 def preprocess_pdf(pdf):
     df = tabula.read_pdf(pdf, pages = total_pages)
     for i, page_df in enumerate(df):
@@ -191,28 +199,5 @@ def preprocess_pdf(pdf):
             df[i]['Amount'] = df[i]['Amount'].str.replace('$', '').astype(float)
     return df
 
-# Call the preprocess_pdf function to get the processed DataFrame
+## Call the preprocess_pdf function to get the processed DataFrame
 pre_pdf = preprocess_pdf(pdf)
-
-
-monyr = 'June-2018'
-year = "2018"
-pdf = filepath.format(year,monyr)
-
-pdf_all = fitz.open(filepath.format(year, monyr))
-total_pages = len(pdf_all)
-type(test)
-# Function to download and extract data for a specific month
-coordinates = get_coordinates_for_month(monyr)
-tabarea = get_area_for_month(monyr)
-colnames = get_colnames_for_month(monyr)
-
-# dfs = tabula.read_pdf(pre_pdf, columns = coordinates, guess = False, pages = 8, area = tabarea)
-dfs = tabula.read_pdf(pre_pdf, pages = 8, area = tabarea)
-dfs[0].columns = colnames
-dfs[0]
-dfs[0].to_csv('{}_RLR.csv'.format(monyr))
-
-# Loop through the months and years you want to process
-
-process_monthly_report(year, monyr)
