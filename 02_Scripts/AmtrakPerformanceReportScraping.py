@@ -2,7 +2,7 @@
 Contributors: Jia-Shen Tsai, Wendy Wen, Zhengqi Jiao, Miaojun Pang,
 Alexander Yoshizumi
 
-Last Updated: 2023-11-12
+Last Updated: 2023-11-14
 
 Description: When run, script scrapes Monthly Performance Report from
 the Amtrak website and extracts the Route Level Results.
@@ -182,7 +182,18 @@ for year in range(2018, 2023):
 # tabula.convert_into(dfs2[0], "output.csv", output_format = "csv")
 # dfs2[0].to_csv('pdf.csv')
 
-# Function to extract data from PDF
+# Function to remove dollar sign
+def preprocess_pdf(pdf):
+    df = tabula.read_pdf(pdf, pages = total_pages)
+    for i, page_df in enumerate(df):
+        # Remove dollar signs from the 'Amount' column (change 'Amount' to your actual column name)
+        if 'Amount' in page_df.columns:
+            df[i]['Amount'] = df[i]['Amount'].str.replace('$', '').astype(float)
+    return df
+
+# Call the preprocess_pdf function to get the processed DataFrame
+pre_pdf = preprocess_pdf(pdf)
+
 
 monyr = 'June-2018'
 year = "2018"
@@ -196,7 +207,8 @@ coordinates = get_coordinates_for_month(monyr)
 tabarea = get_area_for_month(monyr)
 colnames = get_colnames_for_month(monyr)
 
-dfs = tabula.read_pdf(pdf, columns = coordinates, guess = False, pages = 8, area = tabarea)
+# dfs = tabula.read_pdf(pre_pdf, columns = coordinates, guess = False, pages = 8, area = tabarea)
+dfs = tabula.read_pdf(pre_pdf, pages = 8, area = tabarea)
 dfs[0].columns = colnames
 dfs[0]
 dfs[0].to_csv('{}_RLR.csv'.format(monyr))
