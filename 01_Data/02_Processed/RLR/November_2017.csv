@@ -1,0 +1,56 @@
+Route,Type,Operating Revenue,Operating Expense,Adjusted Operating Earnings,Gross Ticket Revenue,Ridership (in Thousands),Seat Miles (in Millions),Passenger Miles (in Millions),eCSI,Average Load Factor,OTP
+Acela,NEC,120.6,50.5,70.2,118.0,652,185.9,123.6,73.1,66%,82.4%
+Regional,NEC,128.7,75.9,52.8,124.2,"1,587",429.6,242.9,77.3,58%,80.2%
+NEC Special Trains & Adjustments,NEC,0.5,0.8,(0.3),0.3,3,0.7,0.3,N/A,N/A,N/A
+NEC,NEC,249.8,127.1,122.7,242.5,"2,242",616.3,366.8,76.1,51%,81.1%
+Ethan Allen Express,State Supported,0.9,0.9,0.0,0.5,9,4.0,1.6,86.3,37%,83.6%
+Vermonter,State Supported,2.1,1.6,0.5,1.2,18,8.9,4.4,76.8,52%,61.5%
+Maple Leaf,State Supported,5.8,5.9,(0.1),4.0,61,38.8,17.9,80.8,42%,82.0%
+The Downeaster,State Supported,1.7,2.9,(1.2),1.7,89,22.7,7.2,85.8,33%,62.7%
+New Haven - Springfield,State Supported,2.9,3.3,(0.4),1.7,44,8.3,3.7,76.1,N/A,N/A
+Keystone Service,State Supported,9.4,9.7,(0.3),8.4,271,50.7,23.8,86.8,41%,88.9%
+Empire Service,State Supported,8.3,11.8,(3.5),9.6,207,62.8,24.7,81.0,48%,77.8%
+Chicago-St.Louis,State Supported,3.1,5.8,(2.7),2.8,93,42.3,16.9,82.4,41%,66.1%
+Hiawathas,State Supported,3.7,4.2,(0.5),3.2,141,29.5,11.3,92.6,38%,93.2%
+Wolverines,State Supported,5.6,6.3,(0.7),3.7,80,33.3,16.8,82.2,52%,82.0%
+Illini,State Supported,1.4,3.3,(1.9),1.3,42,21.2,7.5,69.0,35%,22.3%
+Illinois Zephyr,State Supported,1.0,2.8,(1.8),1.0,33,14.9,5.5,89.7,38%,88.7%
+Heartland Flyer,State Supported,1.1,1.4,(0.3),0.3,12,4.3,2.1,89.4,49%,62.3%
+Pacific Surfliner,State Supported,18.0,21.5,(3.5),13.5,498,135.4,43.2,77.9,30%,75.3%
+Cascades,State Supported,10.2,10.9,(0.7),5.5,129,34.8,19.4,84.0,54%,65.5%
+Capitols,State Supported,10.5,11.4,(0.9),5.8,294,60.3,20.0,84.8,34%,90.2%
+San Joaquins,State Supported,13.4,15.8,(2.4),6.3,186,72.6,25.7,81.9,33%,76.2%
+Adirondack,State Supported,2.2,2.3,(0.1),1.2,20,7.9,5.7,80.0,52%,77.9%
+Blue Water,State Supported,2.1,2.4,(0.3),1.1,30,14.3,5.8,87.7,41%,73.8%
+Washington-Lynchburg,State Supported,2.6,1.6,1.0,2.5,36,10.5,7.9,82.6,N/A,75.4%
+Washington - Newport News,State Supported,4.5,3.3,1.2,4.1,60,19.5,12.5,74.7,N/A,77.0%
+Washington - Norfolk,State Supported,2.0,1.5,0.5,1.6,26,12.0,4.8,87.1,N/A,77.0%
+Washington - Richmond,State Supported,2.1,1.6,0.4,1.6,29,11.7,4.4,77.8,N/A,77.0%
+Hoosier State,State Supported,0.6,1.0,(0.4),0.2,5,2.1,0.7,79.9,36%,67.1%
+Kansas City-St.Louis,State Supported,2.6,2.7,(0.1),1.0,31,18.9,5.3,89.6,29%,84.0%
+Pennsylvanian,State Supported,2.6,2.9,(0.3),2.1,38,13.8,8.8,84.8,53%,77.0%
+Pere Marquette,State Supported,1.1,1.4,(0.3),0.5,15,4.9,2.2,92.3,45%,80.2%
+Carolinian,State Supported,3.9,3.4,0.5,3.0,48,19.9,12.3,73.1,48%,56.7%
+Piedmont,State Supported,0.8,1.3,(0.4),0.7,30,6.9,3.3,87.2,52%,61.5%
+Non Nec Special Trains & Adjustments,State Supported,0.3,2.8,(2.5),0.2,3,0.2,0.5,N/A,N/A,N/A
+State Supported,State Supported,126.5,147.8,(21.3),90.4,"2,579",787.5,326.0,82.5,40%,78.5%
+Silver Star,Long Distance,5.6,12.2,(6.6),5.1,63,50.2,26.9,73.4,57%,27.9%
+Cardinal,Long Distance,1.8,4.6,(2.8),1.6,21,14.9,7.1,67.1,41%,48.1%
+Silver Meteor,Long Distance,6.6,13.9,(7.3),6.2,57,55.3,30.7,71.2,61%,37.7%
+Empire Builder,Long Distance,8.6,19.3,(10.7),7.9,70,92.6,47.2,83.3,54%,81.8%
+Capitol Limited,Long Distance,3.6,8.8,(5.2),3.4,37,26.6,16.2,78.1,64%,41.0%
+California Zephyr,Long Distance,9.3,20.1,(10.7),8.2,62,84.5,46.1,73.4,55%,54.9%
+Southwest Chief,Long Distance,7.8,18.5,(10.7),7.2,55,74.4,44.3,75.8,62%,70.5%
+City of New Orleans,Long Distance,3.2,6.8,(3.6),3.0,40,29.5,16.5,72.6,56%,66.4%
+Texas Eagle,Long Distance,4.4,10.1,(5.7),4.0,59,42.4,26.4,74.6,54%,48.4%
+Sunset Limited,Long Distance,2.0,8.1,(6.1),1.7,15,25.1,10.7,79.2,46%,63.5%
+Coast Starlight,Long Distance,7.7,15.8,(8.1),7.0,72,59.8,33.6,72.5,58%,61.5%
+Lake Shore Limited,Long Distance,5.4,11.9,(6.4),5.1,64,55.4,27.1,69.6,50%,41.0%
+Palmetto,Long Distance,5.5,6.1,(0.6),5.3,70,38.2,16.9,73.5,44%,52.5%
+Crescent,Long Distance,5.8,12.2,(6.3),5.5,48,50.9,22.0,62.2,47%,13.1%
+Auto Train,Long Distance,11.5,15.3,(3.8),11.4,36,56.6,31.0,76.0,61%,72.1%
+Long Distance Adjustments,Long Distance,0.2,0.8,(0.7),N/A,N/A,N/A,N/A,N/A,N/A,N/A
+Long Distance,Long Distance,89.1,184.4,(95.3),82.6,768,756.4,402.8,73.5,55%,53.1%
+Ancillary,Amtrak,54.3,50.7,3.6,,,,,,,
+Infrastructure,Amtrak,35.5,47.6,(12.1),,,,,,,
+Amtrak,Amtrak,555.3,557.6,(2.3),415.5,"5,589","2,160.1","1,095.5",78.7,51%,76.4%

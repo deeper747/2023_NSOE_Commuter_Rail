@@ -167,7 +167,7 @@ for year in range(2018, 2023):
 
 
 # Single File Inspection
-monyr = 'June-2018'
+monyr = 'January-2018'
 year = "2018"
 pdf = filepath.format(year,monyr)
 
@@ -179,7 +179,7 @@ coordinates = get_coordinates_for_month(monyr)
 tabarea = get_area_for_month(monyr)
 colnames = get_colnames_for_month(monyr)
 
-dfs = tabula.read_pdf(pdf, columns = coordinates, guess = False, pages = 8, area = tabarea)
+dfs = tabula.read_pdf(pdf, columns = coordinates, guess = False, pages = 7, area = tabarea)
 # dfs = tabula.read_pdf(pre_pdf, pages = 8, area = tabarea)
 dfs[0].columns = colnames
 dfs[0]

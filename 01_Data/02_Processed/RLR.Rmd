@@ -1,0 +1,82 @@
+---
+title: "RLR"
+author: "Wendy Wen"
+date: "2023-11-26"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Install packages
+#install.packages("purrr")
+install.packages("dplyr")
+install.packages("rlang")
+```
+
+```{r}
+# Load library
+library(dplyr)
+library(tidyr)
+#library(purrr)
+```
+
+```{r}
+# Set directory
+setwd("/Users/wendywen/Desktop/MP/RLR")
+```
+
+```{r}
+# Read all csv into a list of dataframes and give meaningful names
+csv_files <- list.files(pattern = "\\.csv$")
+data_frames <- lapply(csv_files, read.csv)
+names(data_frames) <- gsub(".csv", "", csv_files)
+```
+
+```{r}
+# Choose columns
+columns_to_extract = c("Route", "Type", "Ridership..in.Thousands.","Seat.Miles..in.Millions.", "Passenger.Miles..in.Millions.")
+extracted_columns_list = lapply(data_frames, "[", , columns_to_extract)
+```
+
+```{r}
+# Choose rows
+rows_to_select = c("Carolinian", "Piedmont", "Silver Star", "Silver Meteor","Palmetto","Crescent")
+selected_rows_list_subset <- lapply(extracted_columns_list, function(df) {
+  subset(df, Route %in% rows_to_select)
+})
+```
+
+```{r}
+# Combine a list of dataframes into a single dataframe and edit the date
+combined_df <- do.call(rbind, selected_rows_list_subset)
+combined_df <- add_rownames(combined_df, var = "Date")
+df_split <- separate(combined_df, Date, into = c("Month", "Year","Drop"), sep = "[\\_\\.]")
+df <- select(df_split, -Drop)
+
+# Rename the columns
+df <- df %>%
+  rename(Ridership_k = Ridership..in.Thousands., SMT_M = Seat.Miles..in.Millions.,PMT_M = Passenger.Miles..in.Millions.)
+```
+
+```{r}
+# Save csv
+file_path <- "/Users/wendywen/Desktop/MP/RLR/rlrall.csv"
+write.csv(df, file_path)
+```
+
+```{r}
+# Calculate load factor
+df$SMT_M <- as.numeric(df$SMT_M)
+df$PMT_M <- as.numeric(df$PMT_M)
+df <- df %>%
+  mutate(Load_factor = PMT_M / SMT_M)
+df$Load_factor <- round(df$Load_factor, digits = 4)
+```
+
+```{r}
+
+```
+

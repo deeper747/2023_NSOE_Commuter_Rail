@@ -1,0 +1,65 @@
+Route,Type,"Operating
+Revenue","Operating
+Expense","Adjusted
+Operating
+Earnings","Ridership
+(in Thousands)","Seat Miles
+(in Millions)","Passenger Miles
+(in Millions)","Average
+Load Factor",OTP
+Acela,NEC,59.7,190.1,(130.5),455.6,337.8,92.7,27%,84.1%
+Regional,NEC,130.6,309.7,(179.2),1965.9,"1,090.4",318.8,30%,87.2%
+NEC Special Trains & Adjustments,NEC,6.4,8.1,(1.8),1.2,4.6,0.2,N/A,N/A
+NEC,NEC,196.6,508.0,(311.4),2422.7,"1,432.8",411.7,29%,86.7%
+Ethan Allen Express,State Supported,0.8,0.6,0.2,0,0.0,0.0,0%,92.4%
+Vermonter,State Supported,0.1,0.1,0.0,0.1,0.8,0.0,0%,94.1%
+Maple Leaf,State Supported,19.5,19.9,(0.4),149.9,113.8,42.8,37%,84.5%
+The Downeaster,State Supported,11.3,11.7,(0.4),97.2,99.3,8.2,8%,73.6%
+New Haven - Springfield,State Supported,15.6,20.4,(4.8),119.1,48.8,7.3,15%,92.3%
+Keystone Service,State Supported,30.7,47.5,(16.8),238.8,162.6,21.7,13%,95.3%
+Empire Service,State Supported,37.5,48.1,(10.5),369.1,208.3,43.2,21%,91.8%
+Chicago-St.Louis,State Supported,16.7,20.6,(3.9),155.6,96.1,28.5,30%,78.8%
+Hiawathas,State Supported,12.0,14.1,(2.1),120,38.2,9.7,26%,93.9%
+Wolverines,State Supported,11.5,13.5,(2.0),80.5,57.7,18.5,32%,59.2%
+Illini,State Supported,10.1,5.3,4.8,93,71.8,14.7,21%,84.9%
+Illinois Zephyr,State Supported,7.2,7.8,(0.6),45.9,31.7,7.7,24%,90.6%
+Heartland Flyer,State Supported,4.9,6.2,(1.3),26.7,17.3,4.8,28%,71.1%
+Pacific Surfliner,State Supported,55.4,67.8,(12.4),481.2,318.4,45.9,14%,87.5%
+Cascades,State Supported,16.0,21.6,(5.6),84.1,41.3,13.1,32%,57.5%
+Capitols,State Supported,28.7,33.3,(4.7),213.5,132.9,15.0,11%,91.4%
+San Joaquins,State Supported,42.0,49.5,(7.5),285.8,289.6,40.9,14%,83.3%
+Adirondack,State Supported,1.6,0.7,1.0,0,0.0,0.0,0%,0.0%
+Blue Water,State Supported,11.3,13.4,(2.1),57.9,60.8,10.7,17%,76.2%
+Washington-Lynchburg,State Supported,8.6,8.4,0.1,69.4,53.2,17.0,32%,85.6%
+Washington - Newport News,State Supported,8.0,15.2,(7.2),120.1,72.1,27.7,33%,84.2%
+Washington - Norfolk,State Supported,13.5,12.2,1.2,84.5,82.0,20.4,23%,84.2%
+Washington - Richmond,State Supported,8.2,0.1,8.1,0.1,0.0,0.0,0%,84.2%
+Hoosier State,State Supported,-,0.0,(0.0),0,0.0,0.0,0%,0.0%
+Kansas City-St.Louis,State Supported,7.6,7.8,(0.2),45.1,47.3,8.9,19%,81.8%
+Pennsylvanian,State Supported,11.9,13.0,(1.2),80.4,57.6,18.2,32%,74.0%
+Pere Marquette,State Supported,5.3,6.2,(0.9),29.5,20.6,4.5,22%,83.1%
+Carolinian,State Supported,14.7,16.8,(2.1),125.2,87.9,37.9,43%,72.9%
+Piedmont,State Supported,4.6,5.1,(0.5),57.3,28.5,6.4,22%,78.5%
+Non Nec Special Trains & Adjustments,State Supported,0.1,8.9,(8.9),0,2.6,0.0,N/A,N/A
+State Supported,State Supported,415.1,495.8,(80.7),3229.9,"2,241.1",473.8,21%,83.7%
+"
+Silver Star",Long Distance,13.8,38.6,(24.9),123.8,149.3,59.3,40%,40.3%
+Cardinal,Long Distance,4.3,18.7,(14.4),47,54.8,19.1,34%,56.7%
+Silver Meteor,Long Distance,16.2,42.7,(26.5),129,177.0,67.8,38%,51.7%
+Empire Builder,Long Distance,18.3,57.6,(39.3),123.9,228.8,87.2,38%,56.3%
+Capitol Limited,Long Distance,5.4,18.0,(12.7),49.8,43.3,21.1,49%,37.1%
+California Zephyr,Long Distance,18.3,56.6,(38.2),106.4,186.5,80.4,43%,46.4%
+Southwest Chief,Long Distance,15.4,52.9,(37.5),78.6,180.2,74.2,41%,36.2%
+City of New Orleans,Long Distance,5.9,19.8,(13.8),60.1,63.7,25.1,38%,83.2%
+Texas Eagle,Long Distance,9.0,25.4,(16.4),88.6,76.3,47.2,62%,59.1%
+Sunset Limited,Long Distance,5.4,35.8,(30.3),39.2,113.7,27.8,25%,32.4%
+Coast Starlight,Long Distance,14.7,47.1,(32.4),119.2,138.9,56.2,41%,56.4%
+Lake Shore Limited,Long Distance,9.4,30.7,(21.3),106.5,105.0,44.0,42%,59.0%
+Palmetto,Long Distance,6.2,17.0,(10.8),71.4,54.7,19.6,36%,66.0%
+Crescent,Long Distance,9.0,30.5,(21.5),67.3,79.6,32.3,41%,45.1%
+Auto Train,Long Distance,60.4,65.1,(4.7),138.6,234.7,118.5,51%,54.3%
+Long Distance Adjustments,Long Distance,(0.0),1.3,(1.3),,N/A,N/A,N/A,N/A
+Long Distance,Long Distance,211.9,557.8,(345.9),1349.6,"1,886.4",779.8,41%,52.1%
+Ancillary,Amtrak,250.7,245.6,5.0,,,,,
+Infrastructure,Amtrak,187.8,291.0,(103.2),,,,,
+Amtrak,Amtrak,"1,262.1","2,098.3",(836.2),7002.1,"5,560.2","1,665.3",30%,78.9%

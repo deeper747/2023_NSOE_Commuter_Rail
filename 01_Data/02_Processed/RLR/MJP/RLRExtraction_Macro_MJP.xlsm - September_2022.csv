@@ -1,0 +1,66 @@
+($s in Millions),Type,"Operating
+Revenue","Frequency
+Variable Costs","Route Variable
+Costs","System/Fixed
+Cost","Operating
+Expense","Adjusted
+Operating
+Earnings",Gross Ticket,Ridership,Seat Miles,Passenger Miles,Train Miles,Frequencies
+Acela,NEC,344.9,83.1,186.7,78.8,348.6,(3.8),339.2,"2,144.4",703.1,426.8,2.3,"5,880.0"
+Regional,NEC,593.8,172.0,250.8,161.2,583.9,9.9,567.7,"7,089.8","2,040.5","1,272.9",4.7,"12,623.1"
+NEC Special Trains & Adjustments,NEC,6.8,0.7,2.3,9.8,12.8,(6.0),1.7,0.0,5.2,0.0,0.0,386.0
+NEC,NEC,945.5,255.8,439.8,249.8,945.3,0.2,908.7,"9,234.2","2,748.8","1,699.7",7.0,"18,889.1"
+Ethan Allen Express,State Supported,5.7,4.0,1.4,1.8,7.3,(1.7),1.4,63.4,26.7,4.6,0.1,324.2
+Vermonter,State Supported,9.5,5.7,2.3,2.8,10.8,(1.3),2.8,87.3,52.2,9.7,0.2,284.9
+Maple Leaf,State Supported,34.2,20.3,12.1,8.1,40.5,(6.3),16.5,385.0,232.3,74.3,0.7,"1,511.3"
+The Downeaster,State Supported,18.1,10.3,5.5,4.6,20.4,(2.3),9.1,444.8,155.0,38.9,0.5,"3,603.0"
+Berkshire Flyer,State Supported,0.1,0.0,0.0,0.0,0.1,(0.0),0.0,1.6,0.5,0.2,0.0,18.6
+New Haven - Springfield,State Supported,20.5,12.9,13.7,7.6,34.2,(13.7),6.2,324.3,90.8,18.7,0.4,"5,357.8"
+Keystone Service,State Supported,35.1,13.7,43.4,19.5,76.6,(41.5),19.1,806.4,249.1,53.9,0.7,"4,419.5"
+Empire Service,State Supported,55.0,24.9,31.2,19.6,75.7,(20.6),60.6,"1,019.2",288.7,165.9,0.9,"4,502.2"
+Great River Service,State Supported,-,-,-,-,-,-,-,0.0,0.0,0.0,0.0,0.0
+Chicago-St.Louis,State Supported,40.1,19.4,15.4,6.2,41.0,(0.8),15.1,476.1,230.7,93.1,0.8,"2,725.4"
+Hiawathas,State Supported,23.1,12.6,9.9,3.5,26.0,(3.0),12.3,501.9,85.2,40.5,0.4,"4,751.0"
+Wolverines,State Supported,35.8,15.1,20.5,7.9,43.6,(7.8),18.6,367.3,162.4,81.3,0.6,"2,103.0"
+Illini,State Supported,19.8,8.7,3.7,3.0,15.4,4.4,6.5,224.3,125.4,37.1,0.3,940.0
+ILLINOIS Zephyr,State Supported,18.0,8.9,5.4,3.0,17.3,0.8,3.9,134.2,67.2,22.0,0.4,"1,434.0"
+Heartland Flyer,State Supported,7.0,3.9,2.2,2.0,8.2,(1.1),1.8,63.1,28.1,11.5,0.1,723.0
+Pacific Surfliner,State Supported,98.0,59.7,34.2,24.8,118.8,(20.8),52.7,"1,634.2",644.4,161.7,1.5,"7,498.0"
+Cascades,State Supported,38.2,22.1,13.7,8.4,44.1,(5.9),16.0,390.2,119.5,61.1,0.6,"2,185.7"
+Capitols,State Supported,50.4,31.1,14.3,12.4,57.9,(7.4),16.1,674.0,243.9,50.3,0.9,"7,436.0"
+San Joaquins,State Supported,81.4,56.4,22.3,15.5,94.3,(12.8),23.2,709.9,520.0,103.6,1.3,"4,339.0"
+Adirondack,State Supported,2.0,1.9,(0.1),0.2,1.9,0.0,-,0.0,0.0,0.0,0.0,0.0
+Blue Water,State Supported,14.0,6.7,6.6,2.5,15.9,(1.9),5.7,145.1,76.8,28.2,0.2,728.0
+Washington-Roanoke,State Supported,9.9,6.6,4.2,2.5,13.3,(3.4),7.9,230.0,91.4,31.8,0.2,337.6
+Washington - Newport News,State Supported,12.1,8.0,6.1,2.9,17.0,(4.9),9.0,249.2,85.5,30.8,0.2,360.6
+Washington - Norfolk,State Supported,15.2,10.4,7.5,4.7,22.6,(7.3),10.8,311.2,155.8,41.9,0.3,560.2
+Washington - Richmond,State Supported,6.7,3.9,3.0,2.1,9.0,(2.2),2.4,93.3,39.6,7.9,0.1,164.0
+Hoosier State,State Supported,(0.9),(0.0),-,-,(0.0),(0.8),-,0.0,0.0,0.0,0.0,0.0
+Kansas City-St.Louis,State Supported,13.2,6.0,3.3,2.2,11.5,1.7,4.4,120.3,67.9,23.5,0.3,920.1
+Pennsylvanian,State Supported,15.0,9.0,7.3,4.4,20.7,(5.8),9.5,176.1,76.4,37.8,0.3,577.9
+Gulf Coast Limited,State Supported,(0.0),0.0,0.0,0.0,0.0,(0.0),-,0.0,0.0,0.0,0.0,0.0
+Pere Marquette,State Supported,7.1,3.5,3.1,3.0,9.5,(2.4),3.4,86.1,26.0,13.1,0.1,725.0
+Carolinian,State Supported,19.2,12.3,5.2,4.2,21.7,(2.5),13.8,270.1,122.6,59.2,0.3,492.3
+Piedmont,State Supported,8.2,6.5,0.9,2.2,9.6,(1.4),4.3,212.6,59.3,24.8,0.4,"2,132.0"
+Non Nec Special Trains & Adjustments,State Supported,7.0,1.9,4.9,12.4,19.1,(12.1),6.8,0.2,4.9,0.0,0.1,945.0
+State Supported,State Supported,718.9,406.7,303.0,194.2,903.9,(185.0),360.0,"10,201.4","4,128.0","1,327.3",13.1,"62,099.4"
+Silver Star,Long Distance,54.2,53.5,34.7,23.0,111.2,(57.0),50.9,434.8,387.0,220.9,1.1,716.0
+Cardinal,Long Distance,8.1,13.5,5.8,7.7,27.0,(18.9),7.5,80.3,52.9,29.6,0.3,307.0
+Silver Meteor,Long Distance,11.1,10.2,8.5,3.9,22.6,(11.5),10.9,79.2,76.0,41.8,0.3,214.0
+Empire Builder,Long Distance,49.6,65.2,23.8,21.7,110.7,(61.1),47.3,303.6,412.0,220.9,1.6,"1,248.0"
+Capitol Limited,Long Distance,18.8,18.7,12.8,10.5,41.9,(23.1),18.3,167.7,121.3,72.7,0.5,688.0
+California Zephyr,Long Distance,55.1,68.6,27.2,25.0,120.8,(65.7),52.3,290.4,356.8,213.6,1.6,730.0
+Southwest Chief,Long Distance,39.8,58.7,26.1,19.4,104.2,(64.5),37.8,223.7,336.5,199.5,1.5,646.0
+City of New Orleans,Long Distance,14.1,20.1,10.6,8.3,39.0,(24.9),13.3,155.6,134.4,63.8,0.5,578.0
+Texas Eagle,Long Distance,23.3,33.4,12.7,9.7,55.8,(32.5),21.4,253.5,179.7,124.0,0.9,688.0
+Sunset Limited,Long Distance,11.1,29.7,13.4,9.8,52.9,(41.8),10.2,73.9,152.4,56.3,0.6,302.0
+Coast Starlight,Long Distance,46.3,51.6,22.8,18.5,93.0,(46.7),43.6,352.7,278.6,160.7,0.9,684.0
+Lake Shore Limited,Long Distance,30.6,31.5,23.0,13.6,68.1,(37.4),29.4,319.3,223.6,130.6,0.7,"1,215.0"
+Palmetto,Long Distance,25.5,16.7,14.1,9.6,40.3,(14.8),24.1,280.6,151.2,68.2,0.6,701.0
+Crescent,Long Distance,27.2,27.3,24.5,13.2,65.0,(37.8),26.0,202.7,185.4,87.8,0.8,590.0
+Auto Train,Long Distance,119.7,46.9,33.8,17.0,97.7,22.0,118.6,279.0,348.5,168.8,0.6,708.0
+Long Distance Adjustments,Long Distance,0.1,0.4,42.2,4.7,47.3,(47.2),N/A,N/A,N/A,N/A,N/A,N/A
+Long Distance,Long Distance,534.6,545.9,336.1,215.6,"1,097.5",(563.0),511.6,"3,496.9","3,396.6","1,859.2",12.6,"10,015.0"
+Ancillary,Amtrak,380.1,66.8,203.2,99.5,369.6,10.5,,,,,,
+Infrastructure,Amtrak,255.4,62.2,242.8,98.2,403.1,(147.7),,,,,,
+Amtrak,Amtrak,"2,834.5","1,337.3","1,524.9",857.3,"3,719.5",(884.9),"1,780.2","22,932.6","10,273.3","4,886.2",32.7,"91,003.5"
