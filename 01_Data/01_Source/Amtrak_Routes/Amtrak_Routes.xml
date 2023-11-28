@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+    <idinfo>
+        <citation>
+            <citeinfo>
+                <origin/>
+                <pubdate>20220505</pubdate>
+                <title>Amtrak Routes</title>
+                <geoform>Vector digital data</geoform>
+                <lworkcit>
+                    <citeinfo>
+                        <origin/>
+                        <pubdate>20230426</pubdate>
+                        <title>National Transportation Atlas Database</title>
+                    </citeinfo>
+                </lworkcit>
+            </citeinfo>
+        </citation>
+        <descript>
+            <abstract>The Amtrak Routes dataset is as of June 18, 2019 from the Federal Railroad Administration (FRA) and is part of the U.S. Department of Transportation (USDOT)/Bureau of Transportation Statistics (BTS) National Transportation Atlas Database (NTAD). This dataset is a single line representation of unique routes that are generated from the North American Railroad Network (Amtrak). It contains information on ownership, trackage rights, type, passenger, STRACNET, and geographic reference of the Amtrak system at 1:24,000 or better and the dataset covers all 50 states and the District of Columbia.</abstract>
+            <purpose>Amtrak routes can be used within the public, the Federal Government, rail industry, state DOTs, and academia for mapping and analysis.</purpose>
+        </descript>
+        <timeperd>
+            <timeinfo>
+                <sngdate>
+                    <caldate>20190618</caldate>
+                </sngdate>
+            </timeinfo>
+            <current>compilation date</current>
+        </timeperd>
+        <status>
+            <progress>Complete</progress>
+            <update>As needed</update>
+        </status>
+        <spdom>
+            <bounding>
+                <westbc>-171.5</westbc>
+                <eastbc>-67</eastbc>
+                <northbc>71.5</northbc>
+                <southbc>18.5</southbc>
+            </bounding>
+        </spdom>
+        <keywords>
+            <theme>
+                <themekt>ISO 19115 Topic Category</themekt>
+                <themekey>transportation</themekey>
+            </theme>
+            <theme>
+                <themekt>None</themekt>
+                <themekey>NTAD</themekey>
+                <themekey>National Transportation Atlas Database</themekey>
+                <themekey>Transportation</themekey>
+                <themekey>Atlas</themekey>
+                <themekey>Database</themekey>
+                <themekey>Rail</themekey>
+                <themekey>Railroad</themekey>
+                <themekey>Amtrak</themekey>
+                <themekey>Route</themekey>
+                <themekey>Line</themekey>
+                <themekey>Administration</themekey>
+                <themekey>FRA</themekey>
+            </theme>
+            <place>
+                <placekt>None</placekt>
+                <placekey>USA</placekey>
+                <placekey>National</placekey>
+            </place>
+        </keywords>
+        <accconst>unrestricted</accconst>
+        <useconst>NTAD datasets are intended for public usage and are not for sale/resale</useconst>
+        <ptcontac>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>Federal Railroad Administration (FRA)</cntorg>
+                    <cntper>Raquel Wright</cntper>
+                </cntorgp>
+                <cntpos>GIS Program Manager</cntpos>
+                <cntaddr>
+                    <addrtype>mailing and physical</addrtype>
+                    <address>1200 New Jersey Ave. SE</address>
+                    <city>Washington</city>
+                    <state>DC</state>
+                    <postal>20590</postal>
+                    <country>US</country>
+                </cntaddr>
+                <cntvoice>202-493-6415</cntvoice>
+                <cntemail>raquel.wright@dot.gov</cntemail>
+            </cntinfo>
+        </ptcontac>
+        <datacred>Acknowledgment of the Federal Railroad Administration (FRA), the National Railroad Passenger Corporation (Amtrak), and the Bureau of Transportation Statistics (BTS) [distributor].</datacred>
+        <native>Version 6.2 (Build 9200) ; Esri ArcGIS 10.8.1.14362</native>
+    </idinfo>
+    <dataqual>
+        <logic>Unknown</logic>
+        <complete>Data set is considered complete for the information presented, as described in the abstract. Users are advised to read the rest of the metadata record carefully for additional details.</complete>
+        <posacc>
+            <horizpa>
+                <horizpar>Unknown</horizpar>
+            </horizpa>
+        </posacc>
+        <posacc>
+            <vertacc>
+                <vertaccr>Unknown</vertaccr>
+            </vertacc>
+        </posacc>
+        <lineage>
+            <procstep>
+                <procdesc>The dataset was created by coding onto the FRA network then dissolving line attributes by name to create one line per attribute not broken into segments. </procdesc>
+            </procstep>
+        </lineage>
+    </dataqual>
+    <spdoinfo>
+        <direct>Vector</direct>
+        <ptvctinf>
+            <sdtsterm>
+                <sdtstype>Complete chain</sdtstype>
+                <ptvctcnt>47</ptvctcnt>
+            </sdtsterm>
+        </ptvctinf>
+    </spdoinfo>
+    <eainfo>
+        <overview>
+            <eaover>This dataset is a single line representation of unique routes that are generated from the North American Railroad Network (Amtrak). It contains information on ownership, trackage rights, type, passenger, STRACNET, and geographic reference of the Amtrak system at 1:24,000 or better and the dataset covers all 50 states and the District of Columbia.</eaover>
+            <eadetcit>https:/doi.org/10.21949/1529009</eadetcit>
+        </overview>
+    </eainfo>
+    <distinfo>
+        <distrib>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>Bureau of Transportation Statistics</cntorg>
+                </cntorgp>
+                <cntpos>NTAD Program Manager</cntpos>
+                <cntaddr>
+                    <addrtype>mailing and physical</addrtype>
+                    <address>1200 New Jersey Ave. SE</address>
+                    <city>Washington</city>
+                    <state>DC</state>
+                    <postal>20590</postal>
+                    <country>US</country>
+                </cntaddr>
+                <cntvoice>none</cntvoice>
+                <cntemail>ntad@dot.gov</cntemail>
+            </cntinfo>
+        </distrib>
+        <distliab>Distribution Liability</distliab>
+        <stdorder>
+            <digform>
+                <digtinfo>
+                    <formname>ESRI Shapefile</formname>
+                    <formvern>1.0</formvern>
+                    <formspec>download</formspec>
+                    <filedec>ZIP</filedec>
+                </digtinfo>
+                <digtopt>
+                    <onlinopt>
+                        <computer>
+                            <networka>
+                                <networkr>https://doi.org/10.21949/1522014</networkr>
+                            </networka>
+                        </computer>
+                    </onlinopt>
+                </digtopt>
+            </digform>
+            <fees>None. No fees are applicable for obtaining the dataset.</fees>
+        </stdorder>
+    </distinfo>
+    <distinfo>
+        <distrib>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>Bureau of Transportation Statistics</cntorg>
+                </cntorgp>
+                <cntpos>NTAD Program Manager</cntpos>
+                <cntaddr>
+                    <addrtype>mailing and physical</addrtype>
+                    <address>1200 New Jersey Ave. SE</address>
+                    <city>Washington</city>
+                    <state>DC</state>
+                    <postal>20590</postal>
+                    <country>US</country>
+                </cntaddr>
+                <cntvoice>none</cntvoice>
+                <cntemail>ntad@dot.gov</cntemail>
+            </cntinfo>
+        </distrib>
+        <distliab>Distribution Liability</distliab>
+        <stdorder>
+            <digform>
+                <digtinfo>
+                    <formname>AZURE Cloud ArcGIS Server (OGC WMS)</formname>
+                    <formvern>1.3.0</formvern>
+                    <formspec>https://www.ogc.org/standards/wms</formspec>
+                    <formcont>OGC WMS Map Service for visualizing geospatial information</formcont>
+                </digtinfo>
+                <digtopt>
+                    <onlinopt>
+                        <computer>
+                            <networka>
+                                <networkr>https://doi.org/10.21949/1522015</networkr>
+                            </networka>
+                        </computer>
+                    </onlinopt>
+                </digtopt>
+            </digform>
+            <fees>None. No fees are applicable for obtaining the dataset.</fees>
+        </stdorder>
+    </distinfo>
+    <distinfo>
+        <distrib>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>Bureau of Transportation Statistics</cntorg>
+                </cntorgp>
+                <cntpos>NTAD Program Manager</cntpos>
+                <cntaddr>
+                    <addrtype>mailing and physical</addrtype>
+                    <address>1200 New Jersey Ave. SE</address>
+                    <city>Washington</city>
+                    <state>DC</state>
+                    <postal>20590</postal>
+                    <country>US</country>
+                </cntaddr>
+                <cntvoice>none</cntvoice>
+                <cntemail>ntad@dot.gov</cntemail>
+            </cntinfo>
+        </distrib>
+        <distliab>Distribution Liability</distliab>
+        <stdorder>
+            <digform>
+                <digtinfo>
+                    <formname>AZURE Cloud ArcGIS Server (OGC WFS)</formname>
+                    <formvern>1.0.0</formvern>
+                    <formspec>https://www.ogc.org/standards/wfs</formspec>
+                    <formcont>OGC WFS Map Service for visualizing geospatial information</formcont>
+                </digtinfo>
+                <digtopt>
+                    <onlinopt>
+                        <computer>
+                            <networka>
+                                <networkr>https://doi.org/10.21949/1522016</networkr>
+                            </networka>
+                        </computer>
+                    </onlinopt>
+                </digtopt>
+            </digform>
+            <fees>None. No fees are applicable for obtaining the dataset.</fees>
+        </stdorder>
+    </distinfo>
+    <metainfo>
+        <metd>20230607</metd>
+        <metc>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>Federal Railroad Administration (FRA)</cntorg>
+                    <cntper>Raquel Wright</cntper>
+                </cntorgp>
+                <cntpos>GIS Program Manager</cntpos>
+                <cntaddr>
+                    <addrtype>mailing and physical</addrtype>
+                    <address>1200 New Jersey Ave. SE</address>
+                    <city>Washington</city>
+                    <state>DC</state>
+                    <postal>20590</postal>
+                    <country>US</country>
+                </cntaddr>
+                <cntvoice>202-493-6415</cntvoice>
+                <cntemail>raquel.wright@dot.gov</cntemail>
+            </cntinfo>
+        </metc>
+        <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+        <metstdv>FGDC-STD-001-1998</metstdv>
+        <mettc>local time</mettc>
+    </metainfo>
+</metadata>
