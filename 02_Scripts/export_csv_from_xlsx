@@ -1,0 +1,25 @@
+import pandas as pd
+import os
+
+# Define the path to the Excel file
+excel_file_path = '../01_Data/02_Processed/JS_csv.xlsx'
+
+# Create a folder named 'RLR' if it doesn't exist
+output_folder = 'RLR'
+os.makedirs(output_folder, exist_ok=True)
+
+# Read the Excel file
+xls = pd.ExcelFile(excel_file_path)
+
+# Loop through each sheet and export to CSV
+for sheet_name in xls.sheet_names:
+    # Read the sheet into a DataFrame
+    df = pd.read_excel(excel_file_path, sheet_name=sheet_name)
+    
+    # Define the CSV file path and name
+    csv_file_path = os.path.join(output_folder, f'{sheet_name}.csv')
+    
+    # Export the DataFrame to CSV
+    df.to_csv(csv_file_path, index=False)
+
+print(f'CSV files exported to the "{output_folder}" folder.')

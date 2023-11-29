@@ -1,0 +1,56 @@
+Route,Type, Operating Revenue, Operating Expense, Adjusted Operating Earnings, Ridership (in Thousands), eCSI, Average Load Factor, OTP
+Acela,NEC,62.9,28.6,34.4,338.2,83.6,66%,84.1%
+Regional,NEC,62.6,37.1,25.5,809.4,86.9,61%,84.4%
+NEC Special Trains & Adjustments,NEC,0.6,0.6,0.0,0.0,,,
+NEC,NEC,126.1,66.3,59.9,"1,147.5",86.0,63%,84.3%
+Ethan Allen Express,State Supported,0.5,0.5,(0.0),4.1,87.7,43%,73.1%
+Vermonter,State Supported,1.1,0.8,0.3,9.5,90.6,50%,69.7%
+Maple Leaf,State Supported,2.5,2.7,(0.3),31.3,94.8,45%,71.3%
+The Downeaster,State Supported,1.0,1.4,(0.4),43.8,89.5,32%,58.0%
+New Haven - Springfield,State Supported,1.8,2.2,(0.4),31.2,88.4,0%,
+Keystone Service,State Supported,5.0,4.5,0.5,143.6,92.5,41%,88.8%
+Empire Service,State Supported,5.0,5.0,0.0,109.7,90.5,51%,75.6%
+Chicago-St.Louis,State Supported,1.5,2.7,(1.2),52.0,91.0,48%,59.3%
+Hiawathas,State Supported,2.1,1.9,0.1,77.2,85.9,42%,91.0%
+Wolverines,State Supported,2.7,2.6,0.1,41.1,88.2,55%,53.4%
+Illini,State Supported,0.6,1.3,(0.7),22.7,88.4,46%,22.4%
+Illinois Zephyr,State Supported,0.4,1.2,(0.7),15.8,94.2,39%,82.7%
+Heartland Flyer,State Supported,0.6,0.6,0.0,5.5,91.6,44%,37.1%
+Pacific Surfliner,State Supported,8.9,10.8,(1.9),222.8,88.7,28%,68.3%
+Cascades,State Supported,5.1,6.3,(1.1),62.7,91.1,47%,56.6%
+Capitols,State Supported,5.9,5.9,0.0,162.5,93.4,36%,90.7%
+San Joaquins,State Supported,6.6,7.7,(1.1),84.8,92.5,31%,48.8%
+Adirondack,State Supported,1.1,1.1,0.0,13.1,83.6,65%,56.8%
+Blue Water,State Supported,1.0,1.0,0.0,14.2,96.2,39%,67.4%
+Washington-Lynchburg,State Supported,1.3,0.8,0.4,19.6,91.2,0%,70.8%
+Washington - Newport News,State Supported,2.1,1.5,0.5,28.7,86.0,0%,80.2%
+Washington - Norfolk,State Supported,0.9,0.8,0.1,13.3,95.9,0%,80.2%
+Washington - Richmond,State Supported,0.9,0.8,0.1,14.3,88.9,0%,80.2%
+Hoosier State,State Supported,0.3,0.5,(0.2),2.6,96.0,22%,78.7%
+Kansas City-St.Louis,State Supported,1.4,1.1,0.3,15.9,91.3,37%,82.6%
+Pennsylvanian,State Supported,1.1,1.4,(0.2),18.8,92.4,54%,64.6%
+Pere Marquette,State Supported,0.6,0.6,(0.0),7.0,93.6,46%,60.8%
+Carolinian,State Supported,1.8,1.5,0.3,22.7,91.8,46%,60.0%
+Piedmont,State Supported,0.9,0.8,0.1,20.5,95.9,40%,55.6%
+Non Nec Special Trains & Adjustments,State Supported,(0.4),0.4,(0.8),0.0,,,
+State Supported,State Supported,64.3,70.5,(6.1),"1,311.0",90.9,41%,73.2%
+Silver Star,Long Distance,2.3,4.9,(2.5),26.8,86.0,59%,43.3%
+Cardinal,Long Distance,0.5,1.8,(1.3),8.2,87.6,51%,58.3%
+Silver Meteor,Long Distance,3.0,6.2,(3.3),25.2,83.7,65%,68.6%
+Empire Builder,Long Distance,4.3,8.8,(4.4),31.6,89.8,53%,53.3%
+Capitol Limited,Long Distance,1.7,3.9,(2.1),16.6,75.1,72%,19.4%
+California Zephyr,Long Distance,4.7,8.9,(4.2),30.9,88.9,65%,43.1%
+Southwest Chief,Long Distance,4.1,8.4,(4.2),26.0,85.8,67%,36.3%
+City of New Orleans,Long Distance,1.6,3.4,(1.7),20.1,85.9,56%,76.2%
+Texas Eagle,Long Distance,2.1,4.4,(2.3),25.4,81.4,55%,18.5%
+Sunset Limited,Long Distance,1.1,3.8,(2.7),7.8,85.9,44%,25.5%
+Coast Starlight,Long Distance,3.7,7.6,(3.9),32.9,86.3,58%,57.8%
+Lake Shore Limited,Long Distance,2.8,5.4,(2.6),29.5,78.5,50%,40.5%
+Palmetto,Long Distance,2.4,2.8,(0.5),30.4,86.1,41%,77.9%
+Crescent,Long Distance,2.6,5.7,(3.1),22.3,86.7,52%,36.3%
+Auto Train,Long Distance,6.1,7.1,(1.1),17.5,86.4,59%,70.3%
+Long Distance Adjustments,Long Distance,0.0,0.1,(0.1),,,,
+Long Distance,Long Distance,43.0,83.2,(40.2),351.3,85.2,57%,50.5%
+Ancillary,Amtrak,27.3,25.1,2.2,,,,
+Infrastructure,Amtrak,19.0,26.8,(7.8),,,,
+Amtrak,Amtrak,279.8,271.9,7.9,"2,809.8",87.9,53%,75.0%
