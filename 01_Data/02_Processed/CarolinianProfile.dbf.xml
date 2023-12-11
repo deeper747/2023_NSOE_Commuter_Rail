@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xml:lang="en"><Esri><CreaDate>20231209</CreaDate><CreaTime>12303400</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\3D Analyst Tools.tbx\StackProfile" Date="20231209" Time="123034">StackProfile ../01_Data/02_Processed/carolinian.shp ../01_Data/01_Source\NC_DEM.tiff ..\01_Data\02_Processed\CarolinianProfile.dbf "Carolinian Profile Graph"</Process></lineage></DataProperties></Esri></metadata>
