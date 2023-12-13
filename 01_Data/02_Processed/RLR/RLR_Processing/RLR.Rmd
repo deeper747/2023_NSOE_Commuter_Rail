@@ -20,9 +20,10 @@ install.packages("rlang")
 # Load library
 library(dplyr)
 library(tidyr)
-#library(purrr)
+library(purrr)
 ```
 
+# Months with PMT and SMT
 ```{r}
 # Set directory
 setwd("/Users/wendywen/Desktop/MP/RLR")
@@ -62,12 +63,6 @@ df <- df %>%
 ```
 
 ```{r}
-# Save csv
-file_path <- "/Users/wendywen/Desktop/MP/RLR/rlrall.csv"
-write.csv(df, file_path)
-```
-
-```{r}
 # Calculate load factor
 df$SMT_M <- as.numeric(df$SMT_M)
 df$PMT_M <- as.numeric(df$PMT_M)
@@ -77,6 +72,47 @@ df$Load_factor <- round(df$Load_factor, digits = 4)
 ```
 
 ```{r}
-
+# Save csv
+file_path <- "/Users/wendywen/Desktop/MP/RLR/Other/loadfactor.csv"
+write.csv(df, file_path)
 ```
 
+# Months without PMT and SMT
+```{r}
+# Read all csv into a list of dataframes and give meaningful names
+csv_files2 <- list.files(pattern = "\\.csv$")
+data_frames2 <- lapply(csv_files2, read.csv)
+names(data_frames2) <- gsub(".csv", "", csv_files2)
+```
+
+```{r}
+# Choose columns
+columns_to_extract2 = c("Route", "Type", "Ridership..in.Thousands.")
+extracted_columns_list2 = lapply(data_frames2, "[", , columns_to_extract2)
+```
+
+```{r}
+# Choose rows
+rows_to_select2 = c("Carolinian", "Piedmont", "Silver Star", "Silver Meteor","Palmetto","Crescent")
+selected_rows_list_subset2 <- lapply(extracted_columns_list2, function(df) {
+  subset(df, Route %in% rows_to_select2)
+})
+```
+
+```{r}
+# Combine a list of dataframes into a single dataframe and edit the date
+combined_df2 <- do.call(rbind, selected_rows_list_subset2)
+combined_df2 <- add_rownames(combined_df2, var = "Date")
+df_split2 <- separate(combined_df2, Date, into = c("Month", "Year","Drop"), sep = "[\\_\\.]")
+df2 <- select(df_split2, -Drop)
+
+# Rename the columns
+df2 <- df2 %>%
+  rename(Ridership_k = Ridership..in.Thousands.)
+```
+
+```{r}
+# Save csv
+file_path2 <- "/Users/wendywen/Desktop/MP/RLR/Other/ridershiponly.csv"
+write.csv(df2, file_path2)
+```

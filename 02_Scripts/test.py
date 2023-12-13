@@ -1,4 +1,5 @@
 import pandas as pd
+import geopandas as gpd
 
 df_realop = pd.read_csv('../01_Data/02_Processed/realtimeNOV12.csv')
 df_realop.head()
@@ -38,4 +39,9 @@ pd.DataFrame(stop).to_csv(
     index=False
 )
 
-stop_t = pd.read_csv('../01_data/02_Processed/stop.csv')
+df_stop = pd.read_csv('../01_data/02_Processed/stop.csv')
+
+gdf_station = gpd.read_file('../01_data/02_Processed/NCStation.shp')
+gdf_station.shape
+
+gdf_station.to_crs(4326).plot(column="city").grid()
