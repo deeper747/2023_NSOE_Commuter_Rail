@@ -1,6 +1,5 @@
 '''
-Contributors: Jia-Shen Tsai, Wendy Wen, Zhengqi Jiao, Miaojun Pang,
-Alexander Yoshizumi
+Contributors: Jia-Shen Tsai
 
 Last Updated: 2023-11-12
 
@@ -12,7 +11,7 @@ in the US from https://asm.transitdocs.com/ at a specified interval.
 import requests, json, time, os
 from datetime import datetime
 
-# os.makedirs("..\\01_Data\\01_Source\\ASM")
+os.makedirs("../Data/ASM")
 
 def download_json_data(url):
     try:
