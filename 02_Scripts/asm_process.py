@@ -7,20 +7,18 @@ Last Updated: 2024-2-1
 Description: When run, script process the raw json into one csv.
 '''
 
-#pip install geopandas
-#pip install contextily
+# !pip install geopandas
+# !pip install shapely
+# !pip install contextily
 
 import pandas as pd
 import arcpy
 import geopandas as gpd
-import matplotlib.pyplot as plt
-from shapely.geometry import LineString
+from shapely.geometry import LineString, Point
 import contextily as ctx
+import matplotlib.pyplot as plt
 import os
-from arcgis import GeoAccessor
 import warnings
-
-gdf_county = gpd.read_file('../01_Data/01_Source/North_Carolina_State_and_County_Boundary_Polygons.zip')
 
 # Use the warnings context manager to capture and suppress warnings
 with warnings.catch_warnings():
@@ -35,8 +33,13 @@ with warnings.catch_warnings():
         else:
             return None, None, None
 
-    # Initialize an empty GeoDataFrame to store the combined data
-    gdf_realop = gpd.GeoDataFrame()
+    # Initialize empty lists to store the combined data
+    origin_dates = []
+    names = []
+    numbers = []
+    longitudes = []
+    latitudes = []
+    speeds = []
 
     # Read and process each JSON file in the folder
     for filename in os.listdir(json_folder):
@@ -46,34 +49,47 @@ with warnings.catch_warnings():
             # Read JSON file into a df
             df = pd.read_json(json_filepath)
 
-            # Filter routes that pass nc and make lng, lat, speed to independent columns
-            df_nc = df.query('name in ("Silver Meteor","Carolinian","Piedmont","Palmetto","Crescent")')
-            df_nc[['latitude', 'longitude','speed']] = df_nc['location'].apply(extract_coordinates).apply(pd.Series)
+            # Filter routes that pass nc and make lng, lat, speed into a list of lists
+            NC_data = df.query('name in ("Silver Meteor","Carolinian","Piedmont","Palmetto","Crescent")')
+            NC_data['location'] = NC_data['location'].apply(extract_coordinates)
 
-            # Create a sdf
-            sdf = GeoAccessor.from_xy(df_nc, x_column='longitude', y_column='latitude')
+            # Extract and store origin_date, name, and number
+            origin_dates.extend(NC_data['origin_date'].tolist())
+            names.extend(NC_data['name'].tolist())
+            numbers.extend(NC_data['number'].tolist())
 
-            # Create a gdf
-            gdf = gpd.GeoDataFrame(data=sdf, geometry='SHAPE', crs=4326)
+            # Extract and store lng, lat, and speed
+            latitudes.extend([location[0] for location in NC_data['location']])
+            longitudes.extend([location[1] for location in NC_data['location']])
+            speeds.extend([location[2] for location in NC_data['location']])
 
-            # Clip the GeoDataFrame to the county boundary
-            gdf_snap_nc = gpd.clip(gdf, gdf_county)
+# Create a DataFrame with columns of origin_date, name, number, longitude, latitude, speed
+df_realop = pd.DataFrame({
+    'origin_date': origin_dates,
+    'name': names,
+    'number': numbers,
+    'longitude': longitudes,
+    'latitude': latitudes,
+    'speed': speeds
+})
 
-            # Append the clipped gdf to the combined gdf
-            gdf_realop = pd.concat([gdf_realop, gdf_snap_nc], ignore_index=True)
+# Transform pd to gpd
+# s = [Point(xy) for xy in zip(NC_data.longitude, NC_data.latitude)]
+s = [Point(xy) for xy in zip(df_realop.longitude, df_realop.latitude)]
+gdf_realop = gpd.GeoDataFrame(data = df_realop, geometry= s, crs=4326)
+
+# Clip the GeoDataFrame to the county boundary
+gdf_county = gpd.read_file('../01_Data/01_Source/North_Carolina_State_and_County_Boundary_Polygons.zip')
+gdf_county = gdf_county.to_crs(4326)
+gdf_snap_nc = gpd.clip(gdf_realop, gdf_county)
 
 # Remove duplicates based on name and location
-gdf_realop = gdf_realop.drop_duplicates(subset=['name', 'latitude', 'longitude'])
+gdf_real = gdf_snap_nc.drop_duplicates(subset=['name', 'latitude', 'longitude'])
 
-gdf_realop.head()
-
-# Remove duplicates based on name and location
-gdf_realop = gdf_realop.drop_duplicates(subset=['name', 'latitude', 'longitude'])
-
-gdf_realop.head()
+gdf_real.head()
 
 # Export the geodataframe to a CSV file
-pd.DataFrame(gdf_realop).to_csv(
+pd.DataFrame(gdf_real).to_csv(
     '../01_data/02_Processed/realop.csv',
     index=False
 )
