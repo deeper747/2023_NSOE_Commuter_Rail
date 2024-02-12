@@ -33,7 +33,6 @@ ctx.add_basemap(realop_plot,
                source=ctx.providers.CartoDB.Voyager)
 
 
-
 #Potentila stops
 potential_stop = gdf_realop.query('speed < 1')
 potential_stop.shape
