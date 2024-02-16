@@ -15,8 +15,8 @@ from shapely.ops import split, unary_union
 from shapely.geometry import LineString
 
 # read the dataset in
-gdf_hline = gpd.read_file('../01_Data/02_Processed/GIS/H_Line.shp')
-gdf_realop_n = gpd.read_file('../01_Data/02_Processed/GIS/realop_n.shp', engine="pyogrio")
+gdf_hline = gpd.read_file('../01_Data/02_Processed/GIS/H_Line.zip')
+gdf_realop_n = gpd.read_file('../01_Data/02_Processed/GIS/realop_n.zip', engine="pyogrio")
 # df_realop = pd.read_csv('../01_Data/02_Processed/realop.csv')
 df_milepost = pd.read_csv('../01_Data/02_Processed/HLine_milepost.csv')
 gdf_segments = gpd.read_file('../01_Data/02_Processed/GIS/segments.zip')
@@ -46,11 +46,11 @@ gdf_milepost.shape
 
 ### speed distribution
 df_milepost['RASTERVALU'].plot();
-gdf_realop.head()
-gdf_realop.shape
+gdf_realop_n.head()
+gdf_realop_n.shape
 
 ### Plot the speed data with a base map
-realop_plot = gdf_realop.to_crs(3857).plot(column='speed', legend=True)
+realop_plot = gdf_realop_n.to_crs(3857).plot(column='speed', legend=True)
 ctx.add_basemap(realop_plot,
                source=ctx.providers.CartoDB.Voyager)
 
@@ -155,7 +155,6 @@ intersecting_points = gdf_realop_n[gdf_realop_n.intersects(segment)]
 type(intersecting_points)
 intersecting_points.head()
 type(segment)
-segment.
 segment.plot()
 
 # Calculate average speed for each line segment
@@ -178,9 +177,9 @@ gdf_segments.head()
 
 # Plot the line segments with average speed
 px = 1/plt.rcParams['figure.dpi']  # pixel in inches
-fig, ax = plt.subplots(figsize=(1500*px, 450*px))
+fig, ax = plt.subplots(figsize=(800*px, 450*px))
 # Plot the line segments
-gdf_segments.to_crs(3857).plot(ax=ax, column="average_speed", legend=True)
+gdf_segments.to_crs(3857).plot(ax=ax, column="average_speed", linewidth=7.0, legend=True)
 # Add a basemap
 ctx.add_basemap(ax)
 # Show the plot
