@@ -2,7 +2,7 @@
 Contributors: Jia-Shen Tsai, Wendy Wen, Zhengqi Jiao, Miaojun Pang,
 Alexander Yoshizumi
 
-Last Updated: 2024-2-1
+Last Updated: 2024-2-17
 
 Description: When run, script process the raw json into one csv.
 '''
