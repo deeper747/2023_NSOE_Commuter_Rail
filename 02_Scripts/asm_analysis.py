@@ -10,8 +10,9 @@ import pandas as pd
 import geopandas as gpd
 import contextily as ctx
 
-df_realop = pd.read_csv('../01_data/02_Processed/realop.csv')
+df_realop = pd.read_csv('../01_data/02_Processed/realop_total.csv')
 
+df_realop.describe()
 df_realop['speed'].describe()
 grouped_data = df_realop.groupby('name')
 grouped_data['speed'].describe()
