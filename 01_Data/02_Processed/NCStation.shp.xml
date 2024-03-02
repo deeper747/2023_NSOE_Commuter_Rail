@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<metadata xml:lang="en"><Esri><CreaDate>20231212</CreaDate><CreaTime>00350700</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Conversion Tools.tbx\JSONToFeatures" Date="20231212" Time="003507">JSONToFeatures C:\Users\ct325\AppData\Local\Temp\4d0b1d53d24a4cedb44a884f7df7292f.json ..\01_Data\02_Processed\NCStation.shp Polygon</Process></lineage></DataProperties></Esri></metadata>
