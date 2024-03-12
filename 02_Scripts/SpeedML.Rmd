@@ -106,3 +106,18 @@ plot_min_depth_interactions(interactions_frame)
 plot_predict_interaction(forest, df_all, "Station", "Distance_to_Key_Nodes_FOL")
 ```
 
+```{r}
+# Step 2: Predict outcomes for the test set
+# Assuming 'test_data' is your test dataset
+predictions <- predict(forest, newdata = test_data)
+
+# Step 3: Calculate the F1 score
+# Install and load the MLmetrics package if you haven't already
+install.packages("MLmetrics")
+library(MLmetrics)
+
+# Assuming 'actual_values' are the true outcomes for your test set
+F1_score <- F1_Score(actual_values, predictions)
+print(F1_score)
+```
+
