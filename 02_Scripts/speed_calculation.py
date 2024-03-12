@@ -16,18 +16,18 @@ from shapely.geometry import LineString
 
 # read the dataset in
 gdf_hline = gpd.read_file('../01_Data/02_Processed/GIS/H_Line.zip')
-gdf_realop_n = gpd.read_file('../01_Data/02_Processed/GIS/realop_n.zip', engine="pyogrio")
-# df_realop = pd.read_csv('../01_Data/02_Processed/realop.csv')
-df_milepost = pd.read_csv('../01_Data/02_Processed/HLine_milepost.csv')
-gdf_segments = gpd.read_file('../01_Data/02_Processed/GIS/segments.zip')
+# gdf_realop_n = gpd.read_file('../01_Data/02_Processed/GIS/realop_n.zip', engine="pyogrio")
+df_realop = pd.read_csv('../01_Data/02_Processed/GIS/realop_total.csv')
+df_milepost = pd.read_csv('../01_Data/02_Processed/H_Line_50ft_elevation.csv')
+gdf_segments = gpd.read_file('../01_Data/02_Processed/GIS/Segments_50ft.zip')
 
 ## transfrom csv to gdf
-# g1 = gpd.points_from_xy(x=df_realop['longitude'], y = df_realop['latitude'])
-# gdf_realop = gpd.GeoDataFrame(
-#     data = df_realop,
-#     geometry = g1,
-#     crs = 4326
-# )
+g1 = gpd.points_from_xy(x=df_realop['longitude'], y = df_realop['latitude'])
+gdf_realop = gpd.GeoDataFrame(
+    data = df_realop,
+    geometry = g1,
+    crs = 4326
+)
 
 g2 = gpd.points_from_xy(x = df_milepost['x_coordinate'], y = df_milepost['y_coordinate'])
 gdf_milepost = gpd.GeoDataFrame(
@@ -37,7 +37,7 @@ gdf_milepost = gpd.GeoDataFrame(
 )
 
 gdf_hline = gdf_hline.to_crs(gdf_milepost.crs)
-gdf_segments = gdf_segments.to_crs(gdf_realop_n.crs)
+gdf_segments = gdf_segments.to_crs(gdf_realop.crs)
 
 ## data examination
 
@@ -46,8 +46,8 @@ gdf_milepost.shape
 
 ### speed distribution
 df_milepost['RASTERVALU'].plot();
-gdf_realop_n.head()
-gdf_realop_n.shape
+gdf_realop.head()
+gdf_realop.shape
 
 ### Plot the speed data with a base map
 realop_plot = gdf_realop_n.to_crs(3857).plot(column='speed', legend=True)
