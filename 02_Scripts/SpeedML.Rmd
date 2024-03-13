@@ -113,7 +113,7 @@ predictions <- predict(forest, newdata = test_data)
 
 # Step 3: Calculate the F1 score
 # Install and load the MLmetrics package if you haven't already
-install.packages("MLmetrics")
+# install.packages("MLmetrics")
 library(MLmetrics)
 
 # Assuming 'actual_values' are the true outcomes for your test set
