@@ -25,6 +25,9 @@ str(df_all)
 dim(df_east)
 dim(df_west)
 ```
+```{r}
+mean(df_all$Speed_mph)
+```
 
 ```{r create a forest, message = FALSE, warning = FALSE}
 set.seed(2025)
