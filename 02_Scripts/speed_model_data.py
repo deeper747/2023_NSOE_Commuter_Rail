@@ -414,34 +414,34 @@ model_west = model_west.rename(columns={'speed': 'Speed_mph'})
 
 # The points beyond the Greensboro station will give mixed signal to the model because the H-Line is not long enoguh for distinguishing the points
 # so I am removing points beyond the station
-model_east.columns
+# model_east.columns
 
-outlier_mask = (model_east['Node_ID']>=32)
-model_east_rmol = model_east[outlier_mask]
-model_east_rmol.shape
+# outlier_mask = (model_east['Node_ID']>=32)
+# model_east_rmol = model_east[outlier_mask]
+# model_east_rmol.shape
 
-outlier_mask = (model_west['Node_ID']>=32)
-model_west_rmol = model_west[outlier_mask]
+# outlier_mask = (model_west['Node_ID']>=32)
+# model_west_rmol = model_west[outlier_mask]
 
 # Export the east-bound dataset
 ## reordering the columns
 
 model_clms = ['Speed_mph', 'Elevation_Smoothen_ft', 'Elev_Delta_CUR_ft','Elev_Delta_FOL_500ft_ft','Elev_Delta_FOL_500_1kft_ft', 'Elev_Delta_FOL_1k_1k5ft_ft', 'Elev_Delta_FOL_1k5_2kft_ft', 'Elev_Delta_FOL_2k_2k5ft_ft', 'Elev_Delta_PRE_500ft_ft', 'Elev_Delta_PRE_500_1kft_ft', 'Elev_Delta_PRE_1k_1k5ft_ft', 'Elev_Delta_PRE_1k5_2kft_ft', 'Elev_Delta_PRE_2k_2k5ft_ft', 'Curve_CUR_degree','Curve_Max_FOL_500ft_degree','Curve_Max_FOL_500_1kft_degree','Curve_Max_FOL_1k_1k5ft_degree','Curve_Max_FOL_1k5_2kft_degree','Curve_Max_FOL_2k_2k5ft_degree','Curve_Max_PRE_500ft_degree','Curve_Max_PRE_500_1kft_degree','Curve_Max_PRE_1k_1k5ft_degree','Curve_Max_PRE_1k5_2kft_degree','Curve_Max_PRE_2k_2k5ft_degree','Elev_Delta_FOL_500ft_ft','Curve_Max_FOL_500_1kft_degree','Curve_Max_FOL_1k_1k5ft_degree','Curve_Max_FOL_1k5_2kft_degree','Curve_Max_FOL_2k_2k5ft_degree','Curve_Max_PRE_500ft_degree','Curve_Max_PRE_500_1kft_degree','Curve_Max_PRE_1k_1k5ft_degree','Curve_Max_PRE_1k5_2kft_degree','Curve_Max_PRE_2k_2k5ft_degree','Distance_to_Key_Nodes_FOL', 'Distance_to_Key_Nodes_PRE', 'Station','Intersection', 'Switch', 'geometry','x_coordinate', 'y_coordinate', 'Station_if', 'Intersection_if', 'Switch_if', 'Intersection_dist', 'Station_dist','Node_ID','Cumulative_Length_ft','Distance_to_FOL_Intersection','Distance_to_FOL_Station','Distance_to_FOL_Switch','Distance_to_PRE_Intersection','Distance_to_PRE_Station','Distance_to_PRE_Switch']
-r_clms = ['Speed_mph','Curve_CUR_degree','Curve_Max_FOL_500ft_degree','Curve_Max_FOL_500_1kft_degree','Curve_Max_FOL_1k_1k5ft_degree','Curve_Max_FOL_1k5_2kft_degree','Curve_Max_FOL_2k_2k5ft_degree','Curve_Max_PRE_500ft_degree','Curve_Max_PRE_500_1kft_degree','Curve_Max_PRE_1k_1k5ft_degree','Curve_Max_PRE_1k5_2kft_degree','Curve_Max_PRE_2k_2k5ft_degree','Elev_Delta_CUR_ft' ,'Elev_Delta_FOL_500ft_ft','Elev_Delta_FOL_500_1kft_ft','Elev_Delta_FOL_1k_1k5ft_ft','Elev_Delta_FOL_1k5_2kft_ft','Elev_Delta_FOL_2k_2k5ft_ft','Elev_Delta_PRE_500ft_ft','Elev_Delta_PRE_500_1kft_ft','Elev_Delta_PRE_1k_1k5ft_ft','Elev_Delta_PRE_1k5_2kft_ft','Elev_Delta_PRE_2k_2k5ft_ft','Distance_to_FOL_Intersection','Distance_to_FOL_Station','Distance_to_FOL_Switch','Distance_to_PRE_Intersection','Distance_to_PRE_Station','Distance_to_PRE_Switch',]
+r_clms = ['Speed_mph','Curve_CUR_degree','Curve_Max_FOL_500ft_degree','Curve_Max_FOL_500_1kft_degree','Curve_Max_FOL_1k_1k5ft_degree','Curve_Max_FOL_1k5_2kft_degree','Curve_Max_FOL_2k_2k5ft_degree','Curve_Max_PRE_500ft_degree','Curve_Max_PRE_500_1kft_degree','Curve_Max_PRE_1k_1k5ft_degree','Curve_Max_PRE_1k5_2kft_degree','Curve_Max_PRE_2k_2k5ft_degree','Elev_Delta_CUR_ft' ,'Elev_Delta_FOL_500ft_ft','Elev_Delta_FOL_500_1kft_ft','Elev_Delta_FOL_1k_1k5ft_ft','Elev_Delta_FOL_1k5_2kft_ft','Elev_Delta_FOL_2k_2k5ft_ft','Elev_Delta_PRE_500ft_ft','Elev_Delta_PRE_500_1kft_ft','Elev_Delta_PRE_1k_1k5ft_ft','Elev_Delta_PRE_1k5_2kft_ft','Elev_Delta_PRE_2k_2k5ft_ft','Distance_to_FOL_Intersection','Distance_to_FOL_Station','Distance_to_FOL_Switch','Distance_to_PRE_Intersection','Distance_to_PRE_Station','Distance_to_PRE_Switch']
 
-model_east_spreadsheet = model_east_rmol[model_clms]
-model_west_spreadsheet = model_west_rmol[model_clms]
+# model_east_spreadsheet = model_east_rmol[model_clms]
+# model_west_spreadsheet = model_west_rmol[model_clms]
 
-model_east_r = model_east_rmol[r_clms]
-model_west_r = model_west_rmol[r_clms]
-model_r = pd.concat([model_east_r,model_west_r])
+# model_east_r = model_east_rmol[r_clms]
+# model_west_r = model_west_rmol[r_clms]
+# model_r = pd.concat([model_east_r,model_west_r])
 
 ## if not removing outliers
 model_east_spreadsheet = model_east[model_clms]
 model_west_spreadsheet = model_west[model_clms]
 
-model_east_r = model_east_rmol[r_clms]
-model_west_r = model_west_rmol[r_clms]
+model_east_r = model_east[r_clms]
+model_west_r = model_west[r_clms]
 model_r = pd.concat([model_east_r,model_west_r])
 
 na_counts = model_r.isna().sum()
@@ -451,6 +451,7 @@ model_r.dropna(how='any', inplace=True)
 
 na_counts = model_r.isna().sum()
 na_counts
+model_r.shape
 
 model_east_spreadsheet.to_csv('../01_Data/02_Processed/Speed_Model_East.csv', index=False)
 model_west_spreadsheet.to_csv('../01_Data/02_Processed/Speed_Model_West.csv', index=False)
