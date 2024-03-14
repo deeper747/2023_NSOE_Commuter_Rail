@@ -16,6 +16,7 @@ library(randomForest)
 # devtools::install_github("MI2DataLab/randomForestExplainer")
 library(randomForestExplainer)
 ```
+
 ```{r reading files, message = FALSE, warning = FALSE}
 df_all <- read.csv("../01_Data/02_Processed/Speed_Model_R.csv")
 df_east <- read.csv("../01_Data/02_Processed/Speed_Model_East.csv")
@@ -25,8 +26,9 @@ str(df_all)
 dim(df_east)
 dim(df_west)
 ```
-```{r}
+```{r optimal mtry}
 mean(df_all$Speed_mph)
+optimal_mtry <- tuneRF(df_all[,-1], df_all[,1])
 ```
 
 ```{r create a forest, message = FALSE, warning = FALSE}
@@ -39,8 +41,8 @@ forest
 ```
 # Distribution of minimal depth
 ```{r Create Minimal depth for each variable, warning = FALSE}
-# min_depth_frame <- min_depth_distribution(forest)
-# save(min_depth_frame, file = '../01_Data/02_Processed/randomForest/min_depth_fram.rda')
+#min_depth_frame <- min_depth_distribution(forest)
+#save(min_depth_frame, file = '../01_Data/02_Processed/randomForest/min_depth_fram.rda')
 load('../01_Data/02_Processed/randomForest/min_depth_fram.rda')
 head(min_depth_frame, n=10)
 ```
@@ -67,7 +69,7 @@ plot_multi_way_importance(importance_frame, x_measure = "mse_increase", y_measur
 ```
 
 ## Compare measures using ggpairs
-```{r Relations between measures of importance, warning = FALSE}
+```{r Relations between measures of importance, message = FALSE, warning = FALSE}
 # plot_importance_ggpairs(forest) # gives the same result as below but takes longer
 plot_importance_ggpairs(importance_frame)
 ```
@@ -86,8 +88,8 @@ plot_importance_rankings(importance_frame)
 
 ```
 ```{r Interaction frame with interactions, warning = FALSE}
-# interactions_frame <- min_depth_interactions(forest, vars)
-# save(interactions_frame, file = "../01_Data/02_Processed/randomForest/interactions_frame.rda")
+#interactions_frame <- min_depth_interactions(forest, vars)
+#save(interactions_frame, file = "../01_Data/02_Processed/randomForest/interactions_frame.rda")
 load("../01_Data/02_Processed/randomForest/interactions_frame.rda")
 head(interactions_frame[order(interactions_frame$occurrences, decreasing = TRUE), ])
 ```
@@ -99,15 +101,20 @@ plot_min_depth_interactions(interactions_frame)
 
 ```{r Mean minimal depth for 30 most frequent interactions without missing values, warning = FALSE, fig.width=10}
 #interactions_frame <- min_depth_interactions(forest, vars, mean_sample = "relevant_trees", uncond_mean_sample = "relevant_trees")
-# save(interactions_frame, file = "../01_Data/02_Processed/randomForest/interactions_frame_relevant.rda")
+#save(interactions_frame, file = "../01_Data/02_Processed/randomForest/interactions_frame_relevant.rda")
 load("../01_Data/02_Processed/randomForest/interactions_frame_relevant.rda")
 plot_min_depth_interactions(interactions_frame)
 ```
 
 ## Predict of the forest on a grid
 ```{r Prediction of the forest by interactions, warning = FALSE}
-plot_predict_interaction(forest, df_all, "Station", "Distance_to_Key_Nodes_FOL")
+plot_predict_interaction(forest, df_all, "Distance_to_FOL_Station", "Elev_Delta_FOL_1k5_2kft_ft")
 ```
+
+```{r}
+explain_forest(forest, interactions = TRUE, data = df_all)
+```
+
 
 ```{r}
 # Step 2: Predict outcomes for the test set
