@@ -291,10 +291,26 @@ model_west_zt = model_west.merge(model_west_zero,
                                  how='outer', 
                                  indicator=True).query("_merge == 'left_only'").drop('_merge', axis=1)
 
+## creating the trainset difference variables
+clms_train = ['Trainset']
+for i in clms_train:
+    model_east_zt[i]="0"
+    model_west_zt[i]="0"
+
+model_east_zt['name'].value_counts()
+
+# Convert the categorical variable 'category' into dummy variables
+east_dummy_df = pd.get_dummies(model_east_zt['name']).astype(int)
+west_dummy_df = pd.get_dummies(model_west_zt['name']).astype(int)
+
+# Concatenate the dummy variables back to the original DataFrame
+model_east_zt = pd.concat([model_east_zt, east_dummy_df], axis=1)
+model_west_zt = pd.concat([model_west_zt, west_dummy_df], axis=1)
+
 ## reordering the columns
 
-model_clms = ['Speed_mph', 'Elevation_Smoothen_ft', 'Elev_Delta_CUR_ft','Elev_Delta_FOL_2500ft_ft','Elev_Delta_FOL_2k5_5kft_ft', 'Elev_Delta_FOL_5k_7k5ft_ft', 'Elev_Delta_FOL_7k5_10kft_ft', 'Elev_Delta_PRE_2500ft_ft', 'Elev_Delta_PRE_2k5_5kft_ft', 'Elev_Delta_PRE_5k_7k5ft_ft', 'Elev_Delta_PRE_7k5_10kft_ft', 'Curve_CUR_degree','Curve_Max_FOL_2500ft_degree','Curve_Max_FOL_2k5_5kft_degree','Curve_Max_FOL_5k_7k5ft_degree','Curve_Max_FOL_7k5_10kft_degree','Curve_Max_PRE_2500ft_degree','Curve_Max_PRE_2k5_5kft_degree','Curve_Max_PRE_5k_7k5ft_degree','Curve_Max_PRE_7k5_10kft_degree','Elev_Delta_FOL_2500ft_ft','Curve_Max_FOL_2k5_5kft_degree','Curve_Max_FOL_5k_7k5ft_degree','Curve_Max_FOL_7k5_10kft_degree','Curve_Max_PRE_2500ft_degree','Curve_Max_PRE_2k5_5kft_degree','Curve_Max_PRE_5k_7k5ft_degree','Curve_Max_PRE_7k5_10kft_degree','Station','Intersection', 'Switch', 'geometry','x_coordinate', 'y_coordinate', 'Station_if', 'Intersection_if', 'Switch_if','Node_ID','Cumulative_Length_ft','Distance_to_FOL_Intersection','Distance_to_FOL_Station','Distance_to_FOL_Switch','Distance_to_PRE_Intersection','Distance_to_PRE_Station','Distance_to_PRE_Switch']
-r_clms = ['Speed_mph','Curve_CUR_degree','Curve_Max_FOL_2500ft_degree','Curve_Max_FOL_2k5_5kft_degree','Curve_Max_FOL_5k_7k5ft_degree','Curve_Max_FOL_7k5_10kft_degree','Curve_Max_PRE_2500ft_degree','Curve_Max_PRE_2k5_5kft_degree','Curve_Max_PRE_5k_7k5ft_degree','Curve_Max_PRE_7k5_10kft_degree','Elev_Delta_CUR_ft' ,'Elev_Delta_FOL_2500ft_ft','Elev_Delta_FOL_2k5_5kft_ft','Elev_Delta_FOL_5k_7k5ft_ft','Elev_Delta_FOL_7k5_10kft_ft','Elev_Delta_PRE_2500ft_ft','Elev_Delta_PRE_2k5_5kft_ft','Elev_Delta_PRE_5k_7k5ft_ft','Elev_Delta_PRE_7k5_10kft_ft','Distance_to_FOL_Intersection','Distance_to_FOL_Station','Distance_to_FOL_Switch','Distance_to_PRE_Intersection','Distance_to_PRE_Station','Distance_to_PRE_Switch']
+model_clms = ['Speed_mph', 'Elevation_Smoothen_ft', 'Elev_Delta_CUR_ft','Elev_Delta_FOL_2500ft_ft','Elev_Delta_FOL_2k5_5kft_ft', 'Elev_Delta_FOL_5k_7k5ft_ft', 'Elev_Delta_FOL_7k5_10kft_ft', 'Elev_Delta_PRE_2500ft_ft', 'Elev_Delta_PRE_2k5_5kft_ft', 'Elev_Delta_PRE_5k_7k5ft_ft', 'Elev_Delta_PRE_7k5_10kft_ft', 'Curve_CUR_degree','Curve_Max_FOL_2500ft_degree','Curve_Max_FOL_2k5_5kft_degree','Curve_Max_FOL_5k_7k5ft_degree','Curve_Max_FOL_7k5_10kft_degree','Curve_Max_PRE_2500ft_degree','Curve_Max_PRE_2k5_5kft_degree','Curve_Max_PRE_5k_7k5ft_degree','Curve_Max_PRE_7k5_10kft_degree','Elev_Delta_FOL_2500ft_ft','Curve_Max_FOL_2k5_5kft_degree','Curve_Max_FOL_5k_7k5ft_degree','Curve_Max_FOL_7k5_10kft_degree','Curve_Max_PRE_2500ft_degree','Curve_Max_PRE_2k5_5kft_degree','Curve_Max_PRE_5k_7k5ft_degree','Curve_Max_PRE_7k5_10kft_degree','Station','Intersection', 'Switch', 'geometry','x_coordinate', 'y_coordinate', 'Station_if', 'Intersection_if', 'Switch_if','Node_ID','Cumulative_Length_ft','Distance_to_FOL_Intersection','Distance_to_FOL_Station','Distance_to_FOL_Switch','Distance_to_PRE_Intersection','Distance_to_PRE_Station','Distance_to_PRE_Switch','Carolinian','Crescent','Piedmont']
+r_clms = ['Speed_mph','Curve_CUR_degree','Curve_Max_FOL_2500ft_degree','Curve_Max_FOL_2k5_5kft_degree','Curve_Max_FOL_5k_7k5ft_degree','Curve_Max_FOL_7k5_10kft_degree','Curve_Max_PRE_2500ft_degree','Curve_Max_PRE_2k5_5kft_degree','Curve_Max_PRE_5k_7k5ft_degree','Curve_Max_PRE_7k5_10kft_degree','Elev_Delta_CUR_ft' ,'Elev_Delta_FOL_2500ft_ft','Elev_Delta_FOL_2k5_5kft_ft','Elev_Delta_FOL_5k_7k5ft_ft','Elev_Delta_FOL_7k5_10kft_ft','Elev_Delta_PRE_2500ft_ft','Elev_Delta_PRE_2k5_5kft_ft','Elev_Delta_PRE_5k_7k5ft_ft','Elev_Delta_PRE_7k5_10kft_ft','Distance_to_FOL_Intersection','Distance_to_FOL_Station','Distance_to_FOL_Switch','Distance_to_PRE_Intersection','Distance_to_PRE_Station','Distance_to_PRE_Switch','Carolinian','Crescent','Piedmont']
 
 # model_east_spreadsheet = model_east_rmol[model_clms]
 # model_west_spreadsheet = model_west_rmol[model_clms]

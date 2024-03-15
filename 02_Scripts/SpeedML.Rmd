@@ -18,9 +18,9 @@ library(randomForestExplainer)
 ```
 
 ```{r reading files, message = FALSE, warning = FALSE}
-df_all <- read.csv("../01_Data/02_Processed/Speed_Model_R.csv")
-df_east <- read.csv("../01_Data/02_Processed/Speed_Model_East.csv")
-df_west <- read.csv("../01_Data/02_Processed/Speed_Model_West.csv")
+df_all <- read.csv("../01_Data/02_Processed/randomForest/Speed_Model_R_v3.csv")
+df_east <- read.csv("../01_Data/02_Processed/randomForest/Speed_Model_East_v3.csv")
+df_west <- read.csv("../01_Data/02_Processed/randomForest/Speed_Model_West_v3.csv")
 
 str(df_all)
 dim(df_east)
@@ -34,11 +34,9 @@ optimal_mtry <- tuneRF(df_all[,-1], df_all[,1])
 ```{r create a forest, message = FALSE, warning = FALSE}
 set.seed(2025)
 forest <- randomForest(Speed_mph ~ ., data = df_all, localImp = TRUE)
-```
-
-```{r calling forest, warning = FALSE}
 forest
 ```
+
 # Distribution of minimal depth
 ```{r Create Minimal depth for each variable, warning = FALSE}
 #min_depth_frame <- min_depth_distribution(forest)
