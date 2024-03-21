@@ -25,8 +25,12 @@ intersection_clms = ['OBJECTID','latdd','longdd']
 df_intersection = df_intersection[intersection_clms]
 
 ### df_station.columns
+mask = (df_station['statype']=='Station Building (with waiting room)')
+df_station = df_station[mask]
+
 station_clms = ['OBJECTID','NEAR_X','NEAR_Y']
 df_station = df_station[station_clms]
+
 
 ## transform to gpd
 g1 = gpd.points_from_xy(x=df_milepost['x_coordinate'], y = df_milepost['y_coordinate'])
@@ -249,7 +253,6 @@ gdf_westbound['Distance_to_PRE_Switch'] = gdf_westbound['Node_ID'].map(gdf_milep
 
 gdf_milepost.shape
 gdf_westbound.shape
-
 
 # Snapping observations
 gdf_speed_east = gpd.read_file('../01_data/02_Processed/GIS/speed_east.shp', engine="pyogrio")
