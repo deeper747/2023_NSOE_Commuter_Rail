@@ -1,0 +1,33 @@
+---
+title: "TripLine"
+author: "Jia-Shen Tsai,  Wendy Wen, Zhengqi Jiao, Miaojun Pang, Alexander Yoshizumi"
+date: "2024-03-24"
+last updated: "2024-03-24"
+output: html_document
+---
+When run, the script create the random forest model and results for the given dataset.
+
+```{r setup, message = FALSE, warning = FALSE}
+rm(list=ls())
+
+library(dplyr)
+library(tidyr)
+```
+
+```{r}
+df <- read.csv("../01_Data/02_Processed/temp/Trips_LT.csv")
+str(df)
+
+df <- rename(df, Trip_ID = Trip_ID_8.2.8.2)
+df <- df[, -5]
+```
+
+```{r}
+# Split Line_Consist into separate lines
+df_expand <- separate_rows(df, Line_Consist, sep = ", ")
+df_expand <- df_expand[, -4]
+```
+```{r}
+write.csv(df_expand, "../01_Data/02_Processed/temp/TripLineExpand.csv", row.names = FALSE)
+```
+

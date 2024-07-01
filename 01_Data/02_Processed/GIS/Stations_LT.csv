@@ -1,0 +1,15 @@
+Station_Key,Station_Name,Node_ID,x_coordinate,y_coordinate
+WDU,West Durham,N0001,-78.9356,36.01466
+DDU,Downtown Durham,N0275,-78.9065,35.99707
+EDU,East Durham,N0489,-78.8848,35.98221
+ELI,Ellis Road,N1039,-78.8505,35.93451
+RTP,Research Triangle Park,N1476,-78.8507,35.88674
+MOR,Morrisville,N1863,-78.8383,35.84776
+DCA,Downtown Cary,N2620,-78.7821,35.78872
+CCD,Corp. Center Dr,N2946,-78.7394,35.78833
+BRR,Blue Ridge Pkwy,N3185,-78.7091,35.79292
+NCS,NC State University ,N3473,-78.6732,35.78602
+RAL,Downtown Raleigh,N3674,-78.6482,35.77678
+HAM,Hammond,N3974,-78.6362,35.74701
+GAR,Garner,N4388,-78.6131,35.71006
+AUB,Auburn,N4926,-78.5463,35.69088
