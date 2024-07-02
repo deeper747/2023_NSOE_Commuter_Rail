@@ -1,0 +1,5 @@
+# ignore json files
+/01_Data/01_Source/ASM/*.json
+
+* ignore Literature
+/03_Literature

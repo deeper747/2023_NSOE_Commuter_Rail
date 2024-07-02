@@ -19,9 +19,9 @@ library(leaflet)
 ```
 
 ```{r reading files, message = FALSE, warning = FALSE}
-df_all <- read.csv("../01_Data/02_Processed/randomForest/Speed_Model_R_v4.csv")
-df_east <- read.csv("../01_Data/02_Processed/randomForest/Speed_Model_East_v4.csv")
-df_west <- read.csv("../01_Data/02_Processed/randomForest/Speed_Model_West_v4.csv")
+df_all <- read.csv("../01_Data/02_Processed/randomForest/Speed_Model_R_v5.csv")
+df_east <- read.csv("../01_Data/02_Processed/randomForest/Speed_Model_East_v5.csv")
+df_west <- read.csv("../01_Data/02_Processed/randomForest/Speed_Model_West_v5.csv")
 
 str(df_all)
 dim(df_east)
@@ -33,7 +33,7 @@ optimal_mtry <- tuneRF(df_all[,-1], df_all[,1])
 ```
 
 ```{r create a forest, message = FALSE, warning = FALSE}
-set.seed(2026)
+set.seed(2024)
 forest <- randomForest(Speed_mph ~ ., data = df_all, localImp = TRUE)
 forest
 ```
@@ -109,7 +109,7 @@ plot_min_depth_interactions(interactions_frame)
 ```{r Prediction of the forest by interactions, warning = FALSE}
 plot_predict_interaction(forest, df_all, "Distance_to_FOL_Station", "Elev_Delta_FOL_1k5_2kft_ft")
 ```
-
+# Export Summary
 ```{r}
 explain_forest(forest, interactions = TRUE, data = df_all)
 ```
