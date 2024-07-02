@@ -1,5 +1,6 @@
 # Estimating the Energy and Emissions Impacts of a Commuter Rail System in North Carolina via Spreadsheet Modeling
 <img width="960" alt="Screenshot 2024-07-02 at 11 38 26 AM" src="https://github.com/deeper747/2023_NSOE_Commuter_Rail/assets/60970217/9a323970-59c8-46cd-a8c0-8e94022b76ed">
+
 ## Purpose
 In the United States, transportation sector is a significant contributor to greenhouse gas emissions. In North Carolina's Triangle region, the population growth that increases vehicular presence on the roads exacerbates this issue. To address climate challenges, promoting public transit emerges as a viable solution while the proposed commuter rail projects offer promising alternatives. Yet, the integration of rail systems requires careful consideration of energy and emissions impacts. To support strategic planning for commuter rail projects in the Triangle region, we built a user-friendly spreadsheet model to assess the energy and emission impacts of various trainset, fuel, and operation scenarios, focusing on the recent proposed Greater Triangle Commuter Rail (GTCR) service running between West Durham and Auburn, NC. Our granular model provides actionable insights for stakeholders to make informed decisions, facilitating sustainable transportation development.
 
