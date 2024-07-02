@@ -3,3 +3,6 @@
 
 * ignore Literature
 /03_Literature
+
+# ignore .DS_Store
+.DS_Store
