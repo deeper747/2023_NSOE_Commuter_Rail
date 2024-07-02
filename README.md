@@ -1,3 +1,11 @@
+# Estimating the Energy and Emissions Impacts of a Commuter Rail System in North Carolina via Spreadsheet Modeling
+<img width="960" alt="Screenshot 2024-07-02 at 11 38 26 AM" src="https://github.com/deeper747/2023_NSOE_Commuter_Rail/assets/60970217/9a323970-59c8-46cd-a8c0-8e94022b76ed">
+## Purpose
+In the United States, transportation sector is a significant contributor to greenhouse gas emissions. In North Carolina's Triangle region, the population growth that increases vehicular presence on the roads exacerbates this issue. To address climate challenges, promoting public transit emerges as a viable solution while the proposed commuter rail projects offer promising alternatives. Yet, the integration of rail systems requires careful consideration of energy and emissions impacts. To support strategic planning for commuter rail projects in the Triangle region, we built a user-friendly spreadsheet model to assess the energy and emission impacts of various trainset, fuel, and operation scenarios, focusing on the recent proposed Greater Triangle Commuter Rail (GTCR) service running between West Durham and Auburn, NC. Our granular model provides actionable insights for stakeholders to make informed decisions, facilitating sustainable transportation development.
+
+## About This Repo
+This project is originally a master research project at Nicholas School of the Environment, Duke University. The authors are no longer affiliated to the school but all the intellectual property are shared by the license of [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1). We store the most of the data, all the collectionand analytical scripts and reference literature in the repo. The full analysis report could be found at [Duke Library](https://hdl.handle.net/10161/30571). If anyone like the see the full raw data, please contact [Applied Data Research Institute](https://www.applieddataresearch.org/contact).
+
 # File Management README
 This directory is structured as follows: (1) Data, (2) Scripts, (3) Literature, (4) Documents, and (5) Deliverables (Figure 1).
 
@@ -36,3 +44,6 @@ File naming conventions are important. I generally recommend including dates in 
 ## Deliverables Folder
 The deliverables folder is for draft and completed versions of project deliverables. 
 
+
+# Cite this work
+Estimating the Energy and Emissions Impacts of a Commuter Rail System in North Carolina via Spreadsheet Modeling © 2024 by Chia-Shen Tsai, Xinyi Wen, Zhengqi Jiao, Miaojun Pang is licensed under CC BY-SA 4.0 
